@@ -12,6 +12,7 @@ class IB::Project
     pods      = project.new_group("Pods")
     pods.path = pods_headers_path
 
+    puts Motion::Project::App.config.files
     IB::Generator.new.write(Motion::Project::App.config.files, "ib.xcodeproj")
 
     support.new_file "ib.xcodeproj/Stubs.h"
